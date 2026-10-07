@@ -1,0 +1,66 @@
+name: Tägliche Aktualisierung
+
+# Holt einmal am Tag die letzte AIS-Position und legt sie verschlüsselt neben die Portal-Seite
+# (gmh-bess-dillfeld/m/live.bin). Einrichtung und Pflege: Runbook Kapitel P12.
+
+on:
+  schedule:
+    - cron: '41 4 * * *'    # 06:41 Uhr MESZ / 05:41 Uhr MEZ
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: live-daten
+  cancel-in-progress: false
+
+jobs:
+  abruf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ZIEL: gmh-bess-dillfeld/m/live.bin
+      PUB: .github/live/gmh-bess-dillfeld.pub.json
+      ENDE: '2026-11-30'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Position abrufen
+        env:
+          SCHIFF_MMSI: ${{ secrets.SCHIFF_MMSI }}
+          AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
+          VESSELFINDER_USERKEY: ${{ secrets.VESSELFINDER_USERKEY }}
+        run: node .github/live/abruf.mjs
+
+      - name: Speichern
+        id: speichern
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ ! -f "$ZIEL" ]; then echo "Keine Datei – nichts zu speichern"; exit 0; fi
+          git add -- "$ZIEL"
+          if git diff --cached --quiet; then echo "Keine Änderung"; exit 0; fi
+          git commit -q -m "Daten aktualisiert"
+          for i in 1 2 3; do
+            if git push -q origin HEAD:main; then echo "geaendert=ja" >> "$GITHUB_OUTPUT"; exit 0; fi
+            sleep $((i * 15))
+            git pull -q --rebase origin main
+          done
+          exit 1
+
+      - name: Seite neu ausliefern
+        if: steps.speichern.outputs.geaendert == 'ja'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" > /dev/null; then
+            echo "Pages-Build angestoßen"
+          else
+            echo "::warning::Pages-Build konnte nicht angestoßen werden – die Seite liest die Datei dann direkt aus dem Repo."
+          fi
