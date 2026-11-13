@@ -1,0 +1,31 @@
+{
+ "name": "Projektportal BESS Dillfeld",
+ "short_name": "Dillfeld",
+ "id": "/gmh-bess-dillfeld/",
+ "start_url": "/gmh-bess-dillfeld/",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#050506",
+ "theme_color": "#050506",
+ "lang": "de",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
