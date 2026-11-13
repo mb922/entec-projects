@@ -1,0 +1,31 @@
+{
+ "name": "Projektportal BESS Bous",
+ "short_name": "Bous",
+ "id": "/bess-bous/",
+ "start_url": "/bess-bous/",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#050506",
+ "theme_color": "#050506",
+ "lang": "de",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
