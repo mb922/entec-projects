@@ -45,164 +45,35 @@ button:hover{background:var(--accent-hover)} button[disabled]{opacity:.6;cursor:
 .bottom a{color:inherit;text-decoration:none}
 @media (max-width:600px){.top{padding:16px 20px}.top .tag{display:none}.card{padding:24px 22px 20px}h1{font-size:26px}}
 @media (prefers-reduced-motion:no-preference){.card{animation:in .5s ease-out both}@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}
-/* Kopfzeile der Projektportale für die Zugangsseiten – erzeugt von make_schale.py aus dem gemeinsamen Stylesheet der Projektportale. Nicht von Hand ändern. */
-:root{--accent:#fff40f;--gut:28px;--hdr:107px;--ink:#fafafa;--ink-2:#c4c4c8;--line:#ffffff14;--line-2:#ffffff29;--mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;--muted:#8a8a90}
-@media (max-width:600px){:root{--gut:16px;--hdr:46px}}
-@media (max-width:980px){:root{--hdr:56px}}
-@media (max-width:600px){:root{--hdr:52px}}
-.pt{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(5,5,6,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.pt-in{display:flex;align-items:center;gap:18px;height:var(--hdr);padding:0 var(--gut)}
-.brand{display:flex;align-items:center;gap:12px;flex:0 0 auto}
-.brand-link{display:block;color:inherit}
-.brand .logo{color:#fafafa;display:block}
-.brand-sep{width:1px;height:20px;background:var(--line-2)}
-.tabs{display:flex;gap:2px;margin-left:6px}
-.tab{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;padding:5px 10px;border-radius:7px;border:0;background:none;cursor:pointer;transition:color .15s,background .15s;white-space:nowrap}
-.tab:hover{color:var(--ink);background:#ffffff0a}
-.tab[aria-current="page"]{color:var(--ink);background:#ffffff12}
-.tab[aria-current="page"]::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent)}
-.pt-r{margin-left:auto;display:flex;align-items:center;gap:10px;flex:0 0 auto}
-@media (max-width:980px){.tabs{display:none}}
-@media (max-width:600px){.pt-in{gap:10px}}
-@media (max-width:600px){.brand{gap:9px}}
-@media (max-width:600px){.brand .logo.entec{height:22px!important;width:auto!important}}
-@media (max-width:600px){.brand .logo.gmh{height:15px!important;width:auto!important}}
-@media (max-width:600px){.brand-sep{height:16px}}
-@media (max-width:1280px){.tabs{margin-left:0}}
-@media (max-width:1280px){.tab{padding:5px 8px}}
-@media (max-width:1180px){.pt-in{gap:12px}}
-@media (max-width:1180px){.tab{padding:5px 7px;gap:6px}}
-@media (max-width:1100px){.tab{font-size:13px;padding:5px 6px}}
-@media (max-width:1100px){.pt-r{gap:8px}}
-.pt-in{flex-wrap:wrap;height:auto;max-width:1240px;margin:0 auto;gap:0 18px}
-.pt-in > .brand{order:1;height:60px;gap:14px}
-.pt-in > .ptl{order:1;display:flex;flex-direction:column;justify-content:center;line-height:1.25;height:28px;padding-left:18px;border-left:1px solid var(--line-2);min-width:0;flex:0 1 auto}
-.ptl span{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);line-height:1.1}
-.ptl b{font-size:15px;font-weight:600;letter-spacing:-.005em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}
-.pt-in > .ptl{height:auto}
-.pt-in > .pt-r{order:1;margin-left:auto;height:60px;gap:12px}
-.pt-in::after{content:"";order:2;flex:0 0 100%;height:0;border-top:1px solid var(--line)}
-.pt-in > .tabs{order:3;display:flex;margin:0 0 0 -12px;gap:4px;flex:0 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none}
-.pt-in > .tabs::-webkit-scrollbar{display:none}
-.tab{font-size:14px;font-weight:500;color:var(--ink-2);padding:12px 12px 11px;border-radius:0;border-bottom:2px solid transparent;background:none;white-space:nowrap}
-.tab:hover{color:var(--ink);background:none}
-.tab[aria-current="page"]{color:var(--ink);background:none;border-bottom-color:var(--accent)}
-.tab[aria-current="page"]::before{display:none}
-@media (max-width:1180px){.pt-in > .ptl span{display:none}}
-@media (max-width:980px){.pt-in{flex-wrap:nowrap}}
-@media (max-width:980px){.pt-in > .brand,.pt-in > .pt-r{height:56px;flex:0 0 auto}}
-@media (max-width:980px){.pt-in > .ptl{flex:1 1 0;overflow:hidden}}
-@media (max-width:980px){.pt-in::after,.pt-in > .tabs{display:none!important}}
-@media (max-width:600px){.pt-in > .brand,.pt-in > .pt-r{height:52px}}
-@media (max-width:600px){.pt-in > .ptl{padding-left:12px}}
-@media (max-width:600px){.ptl b{font-size:13.5px}}
-@media (max-width:400px){.pt-in{gap:0 10px}}
-@media (max-width:400px){.pt-in > .ptl{padding-left:10px}}
-@media (max-width:380px){.pt-in .brand-sep,.pt-in .brand .logo.gmh{display:none!important}}
-@media (max-width:380px){.ptl b{font-size:13px}}
-
-header.pt.gk{position:relative;top:0}
-header.gk .pt-r .tag{margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;text-align:right}
-header.gk .tabs .tab{visibility:hidden;pointer-events:none}
-html:not(.auto) header.gk .pt-in::after,html:not(.auto) header.gk .tabs{display:none}
-html.auto body::before,html.auto body::after{display:none}
-html.auto main,html.auto .bottom,html.auto header.gk .pt-r{display:none}
-.gk-warte{display:none}
-html.auto .gk-warte{display:block;position:fixed;left:0;right:0;top:46%;text-align:center;font-size:14px;color:var(--muted);opacity:0;animation:gkw .4s 1.6s forwards}
-@keyframes gkw{to{opacity:1}}
-@media (max-width:760px){header.gk .pt-r{display:none}}
+/* gate-b: Kopf der Zugangsseite = Glasleiste der App (Design B), keine Logos – uebergang.py (20.11.2026) */
+html,body{background:#000}
+header.gb{position:sticky;top:0;z-index:40;padding:12px 36px 0;background:linear-gradient(180deg,#000 0,#000 12px,rgba(0,0,0,.7) 100%)}
+header.gb::after{content:"";position:absolute;left:0;right:0;top:100%;height:14px;background:linear-gradient(180deg,rgba(0,0,0,.7),rgba(0,0,0,0));pointer-events:none}
+.gb-in{display:flex;align-items:center;gap:6px;height:58px;padding:0 8px 0 16px;border-radius:16px;box-sizing:border-box;background:rgba(32,32,32,.55);
+  -webkit-backdrop-filter:blur(22px) saturate(150%);backdrop-filter:blur(22px) saturate(150%);border:1px solid rgba(255,255,255,.08)}
+.gb-logo{position:relative;display:block;width:22px;height:23px;flex:0 0 auto;margin-right:8px}
+.gb-logo i{position:absolute;width:50%;height:20%;background:#EEEEEE}
+.gb-pj{display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;min-width:0;font:600 15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:-.01em;color:#EEEEEE;white-space:nowrap}
+.gb-pj span{overflow:hidden;text-overflow:ellipsis}
+.gb-pj svg{display:none;width:12px;height:12px;opacity:.7;flex:0 0 auto}
+html.gb-m .gb-pj svg{display:block}
+.gb-tag{margin-left:auto;padding:0 10px;font:400 12px/1.2 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.02em;text-transform:uppercase;color:#AFAFAF;white-space:nowrap}
+@media (max-width:980px){
+  header.gb{padding:env(safe-area-inset-top,0px) 0 0;background:rgba(0,0,0,.62);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+  header.gb::after{display:none}
+  .gb-in{height:53px;padding:0 10px 0 16px;border:0;border-radius:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (max-width:760px){.gb-tag{display:none}}
+html.auto body::before,html.auto body::after,html.auto main,html.auto .bottom,html.auto .gb-tag{display:none}
+.gb-warte{display:none}
+html.auto .gb-warte{display:block;position:fixed;left:0;right:0;top:46%;text-align:center;font:300 14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#AFAFAF;opacity:0;animation:gbw .5s 1.6s forwards}
+@keyframes gbw{to{opacity:1}}
+/* /gate-b */
 </style>
 <script>try{if(localStorage.getItem('fp_auth')||/[#&]c=/.test(location.hash))document.documentElement.className='auto'}catch(e){}</script>
 </head>
 <body>
-<header class="pt gk"><div class="pt-in"><div class="brand"><a class="brand-link" href="https://www.entec-energie.de/" rel="noreferrer" target="_blank" aria-label="ENTEC Energie Invest"><svg class="logo entec" role="img" aria-label="ENTEC Energie Invest" style="height:28px;width:auto;display:block" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="151.707 263.621 404.910 181.082">
-<defs>
-<g>
-<g id="glyph-0-0">
-<path d="M 3.578125 0 L 3.578125 -36.34375 L 27.21875 -36.34375 L 27.21875 -30.828125 L 10.171875 -30.828125 L 10.171875 -20.953125 L 26 -20.953125 L 26 -15.4375 L 10.171875 -15.4375 L 10.171875 -5.515625 L 27.359375 -5.515625 L 27.359375 0 Z M 3.578125 0 "/>
-</g>
-<g id="glyph-0-1">
-<path d="M 33.453125 -36.34375 L 33.453125 0 L 27.59375 0 L 10.46875 -24.75 L 10.171875 -24.75 L 10.171875 0 L 3.578125 0 L 3.578125 -36.34375 L 9.46875 -36.34375 L 26.578125 -11.5625 L 26.90625 -11.5625 L 26.90625 -36.34375 Z M 33.453125 -36.34375 "/>
-</g>
-<g id="glyph-0-2">
-<path d="M 1.984375 -30.828125 L 1.984375 -36.34375 L 30.984375 -36.34375 L 30.984375 -30.828125 L 19.75 -30.828125 L 19.75 0 L 13.21875 0 L 13.21875 -30.828125 Z M 1.984375 -30.828125 "/>
-</g>
-<g id="glyph-0-3">
-<path d="M 34.6875 -24.078125 L 28.046875 -24.078125 C 27.859375 -25.171875 27.507812 -26.140625 27 -26.984375 C 26.5 -27.828125 25.867188 -28.546875 25.109375 -29.140625 C 24.347656 -29.734375 23.484375 -30.175781 22.515625 -30.46875 C 21.554688 -30.769531 20.519531 -30.921875 19.40625 -30.921875 C 17.4375 -30.921875 15.6875 -30.425781 14.15625 -29.4375 C 12.632812 -28.457031 11.441406 -27.015625 10.578125 -25.109375 C 9.710938 -23.210938 9.28125 -20.898438 9.28125 -18.171875 C 9.28125 -15.390625 9.710938 -13.046875 10.578125 -11.140625 C 11.453125 -9.242188 12.648438 -7.8125 14.171875 -6.84375 C 15.691406 -5.882812 17.429688 -5.40625 19.390625 -5.40625 C 20.484375 -5.40625 21.503906 -5.550781 22.453125 -5.84375 C 23.410156 -6.132812 24.269531 -6.5625 25.03125 -7.125 C 25.789062 -7.695312 26.429688 -8.394531 26.953125 -9.21875 C 27.484375 -10.050781 27.847656 -11 28.046875 -12.0625 L 34.6875 -12.03125 C 34.4375 -10.300781 33.898438 -8.675781 33.078125 -7.15625 C 32.253906 -5.644531 31.179688 -4.3125 29.859375 -3.15625 C 28.535156 -2.007812 26.984375 -1.113281 25.203125 -0.46875 C 23.429688 0.175781 21.46875 0.5 19.3125 0.5 C 16.113281 0.5 13.257812 -0.238281 10.75 -1.71875 C 8.238281 -3.195312 6.257812 -5.332031 4.8125 -8.125 C 3.375 -10.914062 2.65625 -14.265625 2.65625 -18.171875 C 2.65625 -22.085938 3.382812 -25.4375 4.84375 -28.21875 C 6.300781 -31.007812 8.28125 -33.144531 10.78125 -34.625 C 13.289062 -36.101562 16.132812 -36.84375 19.3125 -36.84375 C 21.332031 -36.84375 23.210938 -36.554688 24.953125 -35.984375 C 26.691406 -35.421875 28.238281 -34.585938 29.59375 -33.484375 C 30.957031 -32.390625 32.078125 -31.050781 32.953125 -29.46875 C 33.835938 -27.894531 34.414062 -26.097656 34.6875 -24.078125 Z M 34.6875 -24.078125 "/>
-</g>
-<g id="glyph-0-4">
-</g>
-<g id="glyph-1-0">
-<path d="M 4.828125 0 L 4.828125 -36.34375 L 25.90625 -36.34375 L 25.90625 -33.359375 L 8.140625 -33.359375 L 8.140625 -19.671875 L 24.796875 -19.671875 L 24.796875 -16.703125 L 8.140625 -16.703125 L 8.140625 -2.984375 L 26.265625 -2.984375 L 26.265625 0 Z M 4.828125 0 "/>
-</g>
-<g id="glyph-1-1">
-<path d="M 33.125 -36.34375 L 33.125 0 L 29.90625 0 L 8.421875 -30.4375 L 8.140625 -30.4375 L 8.140625 0 L 4.828125 0 L 4.828125 -36.34375 L 8.03125 -36.34375 L 29.578125 -5.875 L 29.859375 -5.875 L 29.859375 -36.34375 Z M 33.125 -36.34375 "/>
-</g>
-<g id="glyph-1-2">
-<path d="M 4.828125 0 L 4.828125 -36.34375 L 16.5625 -36.34375 C 19.132812 -36.34375 21.285156 -35.878906 23.015625 -34.953125 C 24.753906 -34.023438 26.0625 -32.738281 26.9375 -31.09375 C 27.820312 -29.457031 28.265625 -27.582031 28.265625 -25.46875 C 28.265625 -23.34375 27.820312 -21.46875 26.9375 -19.84375 C 26.0625 -18.226562 24.757812 -16.960938 23.03125 -16.046875 C 21.300781 -15.140625 19.160156 -14.6875 16.609375 -14.6875 L 6.625 -14.6875 L 6.625 -17.734375 L 16.515625 -17.734375 C 18.410156 -17.734375 19.988281 -18.046875 21.25 -18.671875 C 22.507812 -19.296875 23.445312 -20.1875 24.0625 -21.34375 C 24.6875 -22.5 25 -23.875 25 -25.46875 C 25 -27.050781 24.6875 -28.4375 24.0625 -29.625 C 23.4375 -30.8125 22.492188 -31.726562 21.234375 -32.375 C 19.972656 -33.03125 18.382812 -33.359375 16.46875 -33.359375 L 8.140625 -33.359375 L 8.140625 0 Z M 20.84375 -16.390625 L 29.796875 0 L 25.953125 0 L 17.109375 -16.390625 Z M 20.84375 -16.390625 "/>
-</g>
-<g id="glyph-1-3">
-<path d="M 29.96875 -24.984375 C 29.632812 -26.191406 29.148438 -27.320312 28.515625 -28.375 C 27.878906 -29.4375 27.085938 -30.363281 26.140625 -31.15625 C 25.203125 -31.957031 24.117188 -32.582031 22.890625 -33.03125 C 21.671875 -33.488281 20.3125 -33.71875 18.8125 -33.71875 C 16.445312 -33.71875 14.328125 -33.101562 12.453125 -31.875 C 10.585938 -30.644531 9.113281 -28.867188 8.03125 -26.546875 C 6.945312 -24.222656 6.40625 -21.429688 6.40625 -18.171875 C 6.40625 -14.921875 6.945312 -12.132812 8.03125 -9.8125 C 9.125 -7.488281 10.617188 -5.707031 12.515625 -4.46875 C 14.410156 -3.238281 16.585938 -2.625 19.046875 -2.625 C 21.273438 -2.625 23.25 -3.117188 24.96875 -4.109375 C 26.6875 -5.109375 28.023438 -6.53125 28.984375 -8.375 C 29.953125 -10.21875 30.421875 -12.410156 30.390625 -14.953125 L 31.46875 -14.625 L 19.828125 -14.625 L 19.828125 -17.609375 L 33.625 -17.609375 L 33.625 -14.625 C 33.625 -11.519531 32.992188 -8.835938 31.734375 -6.578125 C 30.484375 -4.316406 28.765625 -2.570312 26.578125 -1.34375 C 24.390625 -0.113281 21.878906 0.5 19.046875 0.5 C 15.867188 0.5 13.09375 -0.265625 10.71875 -1.796875 C 8.34375 -3.328125 6.492188 -5.488281 5.171875 -8.28125 C 3.847656 -11.082031 3.1875 -14.378906 3.1875 -18.171875 C 3.1875 -21.023438 3.566406 -23.597656 4.328125 -25.890625 C 5.085938 -28.179688 6.160156 -30.144531 7.546875 -31.78125 C 8.941406 -33.414062 10.585938 -34.664062 12.484375 -35.53125 C 14.390625 -36.40625 16.5 -36.84375 18.8125 -36.84375 C 20.800781 -36.84375 22.617188 -36.523438 24.265625 -35.890625 C 25.910156 -35.265625 27.363281 -34.40625 28.625 -33.3125 C 29.882812 -32.21875 30.921875 -30.957031 31.734375 -29.53125 C 32.546875 -28.101562 33.09375 -26.585938 33.375 -24.984375 Z M 29.96875 -24.984375 "/>
-</g>
-<g id="glyph-1-4">
-<path d="M 8.140625 -36.34375 L 8.140625 0 L 4.828125 0 L 4.828125 -36.34375 Z M 8.140625 -36.34375 "/>
-</g>
-<g id="glyph-1-5">
-<path d="M 4.875 -36.34375 L 16.234375 -4.3125 L 16.5625 -4.3125 L 27.90625 -36.34375 L 31.390625 -36.34375 L 18.171875 0 L 14.625 0 L 1.40625 -36.34375 Z M 4.875 -36.34375 "/>
-</g>
-<g id="glyph-1-6">
-<path d="M 24.5625 -27.25 C 24.351562 -29.28125 23.457031 -30.890625 21.875 -32.078125 C 20.289062 -33.273438 18.300781 -33.875 15.90625 -33.875 C 14.207031 -33.875 12.71875 -33.582031 11.4375 -33 C 10.15625 -32.425781 9.148438 -31.625 8.421875 -30.59375 C 7.691406 -29.570312 7.328125 -28.410156 7.328125 -27.109375 C 7.328125 -26.148438 7.535156 -25.3125 7.953125 -24.59375 C 8.367188 -23.875 8.925781 -23.253906 9.625 -22.734375 C 10.332031 -22.222656 11.113281 -21.785156 11.96875 -21.421875 C 12.820312 -21.054688 13.6875 -20.75 14.5625 -20.5 L 18.40625 -19.390625 C 19.5625 -19.078125 20.71875 -18.671875 21.875 -18.171875 C 23.039062 -17.671875 24.101562 -17.046875 25.0625 -16.296875 C 26.03125 -15.546875 26.804688 -14.628906 27.390625 -13.546875 C 27.972656 -12.460938 28.265625 -11.164062 28.265625 -9.65625 C 28.265625 -7.71875 27.757812 -5.972656 26.75 -4.421875 C 25.75 -2.867188 24.304688 -1.640625 22.421875 -0.734375 C 20.546875 0.171875 18.296875 0.625 15.671875 0.625 C 13.191406 0.625 11.039062 0.210938 9.21875 -0.609375 C 7.40625 -1.429688 5.976562 -2.566406 4.9375 -4.015625 C 3.894531 -5.472656 3.304688 -7.160156 3.171875 -9.078125 L 6.578125 -9.078125 C 6.703125 -7.648438 7.175781 -6.4375 8 -5.4375 C 8.832031 -4.445312 9.910156 -3.691406 11.234375 -3.171875 C 12.554688 -2.660156 14.035156 -2.40625 15.671875 -2.40625 C 17.484375 -2.40625 19.09375 -2.707031 20.5 -3.3125 C 21.914062 -3.925781 23.03125 -4.78125 23.84375 -5.875 C 24.65625 -6.976562 25.0625 -8.253906 25.0625 -9.703125 C 25.0625 -10.929688 24.738281 -11.960938 24.09375 -12.796875 C 23.457031 -13.628906 22.566406 -14.328125 21.421875 -14.890625 C 20.285156 -15.460938 18.960938 -15.96875 17.453125 -16.40625 L 13.109375 -17.6875 C 10.265625 -18.539062 8.050781 -19.71875 6.46875 -21.21875 C 4.894531 -22.71875 4.109375 -24.632812 4.109375 -26.96875 C 4.109375 -28.925781 4.628906 -30.644531 5.671875 -32.125 C 6.722656 -33.613281 8.144531 -34.773438 9.9375 -35.609375 C 11.738281 -36.441406 13.753906 -36.859375 15.984375 -36.859375 C 18.242188 -36.859375 20.242188 -36.441406 21.984375 -35.609375 C 23.722656 -34.785156 25.101562 -33.648438 26.125 -32.203125 C 27.144531 -30.753906 27.691406 -29.101562 27.765625 -27.25 Z M 24.5625 -27.25 "/>
-</g>
-<g id="glyph-1-7">
-<path d="M 2.625 -33.359375 L 2.625 -36.34375 L 28.984375 -36.34375 L 28.984375 -33.359375 L 17.453125 -33.359375 L 17.453125 0 L 14.140625 0 L 14.140625 -33.359375 Z M 2.625 -33.359375 "/>
-</g>
-</g>
-</defs>
-<path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 153.707031 340.429688 L 229.03125 340.429688 L 229.03125 309.046875 L 153.707031 309.046875 Z M 153.707031 340.429688 "/>
-<path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 229.03125 309.046875 L 304.351562 309.046875 L 304.351562 277.664062 L 229.03125 277.664062 Z M 229.03125 309.046875 "/>
-<path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 229.03125 371.816406 L 304.351562 371.816406 L 304.351562 340.429688 L 229.03125 340.429688 Z M 229.03125 371.816406 "/>
-<path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 153.707031 403.199219 L 229.03125 403.199219 L 229.03125 371.816406 L 153.707031 371.816406 Z M 153.707031 403.199219 "/>
-<path fill-rule="nonzero" fill="currentColor" fill-opacity="1" d="M 229.03125 434.585938 L 304.351562 434.585938 L 304.351562 403.199219 L 229.03125 403.199219 Z M 229.03125 434.585938 "/>
-
-<g fill="currentColor" fill-opacity="1">
-<use xlink:href="#glyph-0-0" x="343.536464" y="314.034776"/>
-<use xlink:href="#glyph-0-1" x="384.716764" y="314.034776"/>
-<use xlink:href="#glyph-0-2" x="432.543885" y="314.034776"/>
-<use xlink:href="#glyph-0-0" x="476.322943" y="314.034776"/>
-<use xlink:href="#glyph-0-3" x="517.503244" y="314.034776"/>
-</g>
-<g fill="currentColor" fill-opacity="1">
-<use xlink:href="#glyph-1-0" x="343.536464" y="374.006088"/>
-<use xlink:href="#glyph-1-1" x="373.622072" y="374.006088"/>
-</g>
-<g fill="currentColor" fill-opacity="1">
-<use xlink:href="#glyph-1-0" x="412.003711" y="374.006088"/>
-<use xlink:href="#glyph-1-2" x="442.089319" y="374.006088"/>
-<use xlink:href="#glyph-1-3" x="474.074019" y="374.006088"/>
-<use xlink:href="#glyph-1-4" x="511.556088" y="374.006088"/>
-</g>
-<g fill="currentColor" fill-opacity="1">
-<use xlink:href="#glyph-1-0" x="524.949681" y="374.006088"/>
-</g>
-<g fill="currentColor" fill-opacity="1">
-<use xlink:href="#glyph-0-4" x="554.61659" y="374.006088"/>
-</g>
-<g fill="currentColor" fill-opacity="1">
-<use xlink:href="#glyph-1-4" x="343.536464" y="433.9774"/>
-<use xlink:href="#glyph-1-1" x="363.436944" y="433.9774"/>
-<use xlink:href="#glyph-1-5" x="408.325471" y="433.9774"/>
-</g>
-<g fill="currentColor" fill-opacity="1">
-<use xlink:href="#glyph-1-0" x="448.06646" y="433.9774"/>
-</g>
-<g fill="currentColor" fill-opacity="1">
-<use xlink:href="#glyph-1-6" x="484.658955" y="433.9774"/>
-</g>
-<g fill="currentColor" fill-opacity="1">
-<use xlink:href="#glyph-1-7" x="523.05059" y="433.9774"/>
-</g>
-</svg>
-</a></div><div class="ptl"><span>Projektportal</span><b data-notr>BESS Braunfelser</b></div><nav class="tabs" aria-hidden="true"><span class="tab">&nbsp;</span></nav><div class="pt-r"><span class="tag">Zugang nur für eingeladene Personen</span></div></div></header><div class="gk-warte" role="status">Portal wird geöffnet …</div>
+<!--gb--><header class="gb"><div class="gb-in"><a class="gb-logo" href="https://www.entec-energie.de/" rel="noreferrer" target="_blank" aria-label="ENTEC"><i style="left:50%;top:0%"></i><i style="left:0%;top:20%"></i><i style="left:50%;top:40%"></i><i style="left:0%;top:60%"></i><i style="left:50%;top:80%"></i></a><div class="gb-pj"><span id="gb-n" data-notr>Braunfelser Straße</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></div><span class="gb-tag">Zugang nur für eingeladene Personen</span></div></header><script>(function(){try{var d=document.documentElement,p=location.pathname,n=null,m=0;if(!d.classList.contains('auto'))return;var z=JSON.parse(sessionStorage.getItem('fp_ziel')||'null');sessionStorage.removeItem('fp_ziel');if(z&&z.p===p){n=z.t;m=1}else{var k=JSON.parse(localStorage.getItem('fp_kopf')||'{}')[p];if(k){n=k.t;m=k.m}}if(n)document.getElementById('gb-n').textContent=n;if(m)d.classList.add('gb-m')}catch(e){}})();</script><div class="gb-warte" role="status">Portal wird geöffnet …</div><!--/gb-->
 <main>
 <form class="card" id="gate" autocomplete="on">
   <div class="eyebrow">ENTEC Energie Invest GmbH</div>
@@ -249,6 +120,7 @@ html.auto .gk-warte{display:block;position:fixed;left:0;right:0;top:46%;text-ali
     const fpIcons = [...document.querySelectorAll('link[rel~="icon"],link[rel="apple-touch-icon"],link[rel="manifest"],meta[name="apple-mobile-web-app-title"]')].map(n => n.outerHTML).join('');
     const fpHead = html.indexOf('</head>');
     if (fpIcons && fpHead > 0) html = html.slice(0, fpHead).replace(/<link rel="icon"[^>]*>/g, '') + fpIcons + html.slice(fpHead);   // Icons der Zugangsseite in die App übernehmen (Tab, Dock, Home-Bildschirm)
+    /*fp-ueb*/{ const fpU = html.indexOf('</head>'); if (fpU > 0 && html.indexOf('id="fp-ueb"') < 0) html = html.slice(0, fpU) + "<style id=\"fp-ueb\">\nhtml.fp-warte body>*:not(.pt):not(#dsb-intro),html.fp-warte .pt-in>:not(.dsb-logo):not(.dsb-pj){opacity:0}\nhtml.fp-ein body>*:not(.pt):not(#dsb-intro){animation:fpEin .5s cubic-bezier(.16,1,.3,1) both}\nhtml.fp-ein .pt-in>:not(.dsb-logo):not(.dsb-pj){animation:fpEin .4s ease both}\nhtml.fp-aus body>*:not(.pt):not(#dsb-intro),html.fp-aus .pt-in>:not(.dsb-logo):not(.dsb-pj){opacity:0!important;transition:opacity .16s ease}\nhtml.fp-aus .dsb-menu{display:none!important}\n@keyframes fpEin{from{opacity:0}to{opacity:1}}\n.dsb-hero img,.dsb-ph img,.dsb-ba img{color:transparent}\n.dsb-hero img:not(.fp-da),.dsb-ph img:not(.fp-da),.dsb-ba img:not(.fp-da){opacity:0}\n.dsb-hero img.fp-da,.dsb-ph img.fp-da,.dsb-ba img.fp-da{animation:fpEin .6s ease both}\n@media (prefers-reduced-motion:reduce){html.fp-ein *,.dsb-hero img.fp-da,.dsb-ph img.fp-da,.dsb-ba img.fp-da{animation:none!important}}\n<\/style><script id=\"fp-ueb-js\">(function () {\n  var d = document.documentElement, P = location.pathname, raus = false;\n  d.classList.add('fp-warte');\n  function da(img) { if (img && img.tagName === 'IMG') img.classList.add('fp-da'); }\n  document.addEventListener('load', function (e) { da(e.target); }, true);\n  function alle() { Array.prototype.forEach.call(document.images, function (i) { if (i.complete && i.naturalWidth) da(i); }); }\n  function merken() {   // Name und Projektauswahl für die Zugangsseite beim nächsten Mal (nur das eigene Projekt dieser Seite)\n    try { var b = document.querySelector('.dsb-pj > button'), s = b && b.querySelector('span'); if (!s || raus) return;\n      var k = JSON.parse(localStorage.getItem('fp_kopf') || '{}'); k[P] = {t: s.textContent.trim(), m: b.querySelector('svg') ? 1 : 0};\n      localStorage.setItem('fp_kopf', JSON.stringify(k)); } catch (_) {}\n  }\n  function los() {\n    if (!d.classList.contains('fp-warte')) return;\n    d.classList.remove('fp-warte'); merken();\n    if (document.getElementById('dsb-intro')) return;   // Ladebildschirm (einmal je Sitzung) blendet selbst ein\n    d.classList.add('fp-ein'); setTimeout(function () { d.classList.remove('fp-ein'); }, 650);\n  }\n  document.addEventListener('DOMContentLoaded', function () { requestAnimationFrame(function () { requestAnimationFrame(los); }); });\n  setTimeout(los, 2500); setTimeout(alle, 1500); setTimeout(alle, 5000);\n  var alt = null;\n  document.addEventListener('click', function (e) {\n    if (e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;\n    var a = e.target && e.target.closest ? e.target.closest('.dsb-menu a[href], .pf-x a[href]') : null; if (!a || a.target === '_blank') return;\n    var u = a.getAttribute('href'); if (!/^\\/[a-z0-9-]+\\/$/.test(u) || u === P) return;\n    e.preventDefault(); merken(); raus = true;\n    var t = ((a.querySelector('span') || a).textContent || '').trim(), pj = document.querySelector('.dsb-pj'), s = pj && pj.querySelector('button > span');\n    try { sessionStorage.setItem('fp_ziel', JSON.stringify({p: u, t: t})); } catch (_) {}\n    if (pj) pj.classList.remove('open');\n    if (s && t) { alt = s.textContent; s.textContent = t; }\n    d.classList.add('fp-aus');\n    setTimeout(function () { location.href = u; }, matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 140);\n  });\n  window.addEventListener('pageshow', function (e) {   // Zurück aus dem Verlauf (bfcache): alten Zustand wiederherstellen\n    if (!e.persisted) return; raus = false; d.classList.remove('fp-aus', 'fp-warte');\n    var s = document.querySelector('.dsb-pj > button > span'); if (s && alt != null) s.textContent = alt; alt = null;\n  });\n})();<\/script>" + html.slice(fpU); }/*/fp-ueb*/   // Übergang (uebergang.py): Inhalt weich einblenden, Projektwechsel ohne Sprung
     document.open(); document.write(html); document.close();
   }
   async function tryAuto(){
